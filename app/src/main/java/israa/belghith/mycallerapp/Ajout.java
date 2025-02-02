@@ -36,18 +36,22 @@ public class Ajout extends AppCompatActivity {
                 String prenom=edprenom.getText().toString();
                 String num=ednumero.getText().toString();
 
-                Contact c=new Contact(nom,prenom,num);
+                Contact c=new Contact(num,nom,prenom);
                 //ajoiut data dans la base
                 //int a=dataManager, inserer(c);
                 //àfaire connexion avec base de donnée
                 //+ controll de saisir
-                Home.data.add(c);
+
+                //****************************
+                //Home.data.add(c);
                 Toast.makeText(Ajout.this, "Validation avec succes ", Toast.LENGTH_SHORT).show();
 
-
-
-
-
+//partie base
+                ContactManager cm=new ContactManager(Ajout.this);
+                cm.ouvrir();
+                cm.ajout(num,nom,prenom);
+                Home.data=cm.getAllContacts();
+                //cm.fermer();
 
                 //passage vers home activity
                 /*

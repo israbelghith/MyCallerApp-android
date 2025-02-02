@@ -1,12 +1,14 @@
 package israa.belghith.mycallerapp;
 
 public class Contact {
-    public String nom,prenom,num;
+    public String num,nom,prenom;
 
-    public Contact(String nom, String prenom, String num) {
+    public Contact(  String num, String nom,String prenom) {
+
+        this.num = num;
         this.nom = nom;
         this.prenom = prenom;
-        this.num = num;
+
     }
 
     @Override
