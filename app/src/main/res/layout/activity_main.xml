@@ -71,4 +71,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Quitter" />
+
+
+    <CheckBox
+        android:id="@+id/chk_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Se connecter en tant qu'Admin"/>
+
 </LinearLayout>

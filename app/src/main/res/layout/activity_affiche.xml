@@ -30,9 +30,22 @@
             android:gravity="center"
             android:hint="Recherche"
             android:inputType="text" />
+        <!--<SearchView
+            android:id="@+id/searchview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Recherche"
+            android:inputType="text"
+            app:iconifiedByDefault="false"
+            />-->
 
-        <ListView
-            android:id="@+id/lv_aff"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_aff"
             android:layout_width="match_parent"
             android:layout_height="473dp"
             android:layout_marginLeft="10dp"

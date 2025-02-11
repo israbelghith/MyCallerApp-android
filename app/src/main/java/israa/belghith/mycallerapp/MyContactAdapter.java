@@ -49,7 +49,7 @@ public class MyContactAdapter extends BaseAdapter {
         //creation d'un veiw
         //convertir un fichier xml =>parse xml
         LayoutInflater inf = LayoutInflater.from(con);
-        View v = inf.inflate(R.layout.view_contact, null);
+        View v = inf.inflate(R.layout.view_contact, null);//v=>view holder
 
         //recupration des textview
         //v est nommé viewHolder
@@ -74,7 +74,7 @@ imgCall.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         Intent i=new Intent();
-        i.setAction(Intent.ACTION_DIAL);
+        i.setAction(Intent.ACTION_CALL);//permission requise
         i.setData(Uri.parse("tel:"+c.num));
         con.startActivity(i);
     }

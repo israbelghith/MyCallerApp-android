@@ -63,18 +63,7 @@ public class Ajout extends AppCompatActivity {
 
             }
         });
-        btnAnnuler.setOnClickListener(v->{finish();}
-/*                new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //passage vers home activity
-                Intent i =new Intent(Ajout.this,Home.class);
-                startActivity(i);
-                 finish();//appel ->onstop ->ondestroy
-
-                Toast.makeText(Ajout.this, "Annulation de l'ajout", Toast.LENGTH_SHORT).show();
-            }
-        }*/);
+        btnAnnuler.setOnClickListener(v->{finish();});
 
     }
 }
