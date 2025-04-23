@@ -1,6 +1,7 @@
 package israa.belghith.mycallerapp;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -101,17 +102,19 @@ public class Affiche extends AppCompatActivity {
     }
     private void filterContacts(String query, MyRecyclerContactAdapter adapter) {
         filteredList.clear(); // Vider la liste filtrée
-        if (query.isEmpty()) {
-            filteredList.addAll(contactList); // Si la recherche est vide, afficher tous les contacts
-        } else {
-            // Ajouter les contacts dont le numéro contient la chaîne de recherche
-            for (Contact c : contactList) {
-                if ((c.num != null && c.num.toLowerCase().contains(query)) ||
-                        (c.nom != null && c.nom.toLowerCase().contains(query)) ||
-                        (c.prenom != null && c.prenom.toLowerCase().contains(query))) {
-                    filteredList.add(c);
-                }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+            if (query.isEmpty()) {
+                filteredList.addAll(contactList); // Si la recherche est vide, afficher tous les contacts
+            } else {
+                // Ajouter les contacts dont le numéro contient la chaîne de recherche
+                for (Contact c : contactList) {
+                    if ((c.num != null && c.num.toLowerCase().contains(query)) ||
+                            (c.nom != null && c.nom.toLowerCase().contains(query)) ||
+                            (c.prenom != null && c.prenom.toLowerCase().contains(query))) {
+                        filteredList.add(c);
+                    }
 
+                }
             }
         }
         adapter.updateList(filteredList); // Mettre à jour l'adaptateur avec la liste filtrée
